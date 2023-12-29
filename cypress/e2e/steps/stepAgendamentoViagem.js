@@ -48,7 +48,7 @@ Given("que realizamos o agendamento de uma viagem para um novo usuario no sistem
 });
 
 When("realizamos a chamada da API de agendamento com o usuario gerado", function () {
-    cy.fixture('endPointAgendamentoViagem/requests/jsonRequestlistaDeNomes.json').then((requestJsonAgendamentoViagem) => {
+    cy.readFile('cypress/fixtures/endPointAgendamentoViagem/requests/jsonRequestlistaDeNomes.json').then((requestJsonAgendamentoViagem) => {
         const jsonEmformatoString = JSON.stringify(requestJsonAgendamentoViagem);
         classeRestRequestsInstanciada.requisicaoPostComJson(jsonEmformatoString, urlAgendamentoViagem).then(response => {
             cy.writeFile(caminhoResponseViagemAgendada, JSON.stringify(response));

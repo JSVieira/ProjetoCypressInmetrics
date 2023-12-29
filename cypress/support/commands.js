@@ -1,6 +1,6 @@
 
 Cypress.Commands.add('gerarNomeAleatorio', () => {
-    cy.fixture('endPointAgendamentoViagem/requests/listaDeNomes.json').then((jsonListaNomes) => {
+    cy.readFile('cypress/fixtures/endPointAgendamentoViagem/requests/listaDeNomes.json').then((jsonListaNomes) => {
         const listaNomes = jsonListaNomes.nomes;
         const posicaoNomeComPonto = Math.random() * listaNomes.length;
         const posicaoNomeSemPonto = Math.floor(posicaoNomeComPonto);
@@ -10,7 +10,7 @@ Cypress.Commands.add('gerarNomeAleatorio', () => {
 });
 
 Cypress.Commands.add('gerarSobrenomeAleatorio', () => {
-    cy.fixture('endPointAgendamentoViagem/requests/listaDeSobrenomes.json').then((jsonListaSobrenomes) => {
+    cy.readFile('cypress/fixtures/endPointAgendamentoViagem/requests/listaDeSobrenomes.json').then((jsonListaSobrenomes) => {
         const listaSobrenomes = jsonListaSobrenomes.sobrenomes;
         const posicaoSobrenomeComPonto = Math.random() * listaSobrenomes.length;
         const posicaoSobrenomeSemPonto = Math.floor(posicaoSobrenomeComPonto);
