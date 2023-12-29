@@ -1,0 +1,11 @@
+{
+  "firstname": 1234,
+  "lastname": "Nunes",
+  "totalprice": 1000,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2024-02-01",
+    "checkout": "2024-03-01"
+  },
+  "additionalneeds": "Café da manhã"
+}
